@@ -1,0 +1,17 @@
+import { useEffect,useState } from "react";
+
+function useCurrencyinfo(currency){
+    const [data,setData]=useState({});
+    useEffect(()=>{
+        let url = `https://cdn.jsdelivr.net/npm/@fawazahmed0/currency-api@latest/v1/currencies/${currency}.json`
+        fetch(url)
+        .then((res)=>(res.json()))
+        .then((res)=>setData(res))
+        .catch((error)=>{
+            console.log(`API Error: ${error}`);
+            setData(-1);
+        });
+        },[currency]);
+    return data;
+}
+export default useCurrencyinfo;
