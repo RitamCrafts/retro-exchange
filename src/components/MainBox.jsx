@@ -45,7 +45,7 @@ function MainBox({className,fromTrue,
           onChange={(e)=>onAmountChange && 
             onAmountChange(Number(e.target.value))
           } 
-          className='w-full bg-white border-3 border-slate-800 px-4 py-3 text-3xl font-black text-slate-800 focus:outline-none focus:ring-4 focus:ring-teal-400 shadow-md'/>
+          className='w-full cursor-text bg-white border-3 border-slate-800 px-4 py-3 text-3xl font-black text-slate-800 focus:outline-none focus:ring-4 focus:ring-teal-400 shadow-md'/>
     </div>
   )
 }
