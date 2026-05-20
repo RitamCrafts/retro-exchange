@@ -18,7 +18,7 @@ function App() {
   const fromBoxClass="bg-linear-to-br from-teal-100 to-teal-50";
   const toBoxClass="bg-linear-to-br from-orange-100 to-rose-50";
   useEffect(() => {
-    setConvertedAmount((amount * currencyInfo[to]).toFixed(3))
+    setConvertedAmount((amount * currencyInfo[to]).toFixed(2))
   }, [amount, currencyInfo, to])
 
   const swap=()=>{
