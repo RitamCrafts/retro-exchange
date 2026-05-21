@@ -16,7 +16,7 @@ function MainBox({className,fromTrue,
   const dotColour=fromTrue?"bg-teal-500":"bg-orange-500";
   return (
     <div className={`${className} p-5 min-w-60 max-w-200`}>
-        <div class="flex items-center gap-2 mb-4">
+        <div className="flex items-center gap-2 mb-4">
           <div className={`w-2 h-2 ${dotColour} rounded-full`}/>
           <div className={`w-2 h-2 ${dotColour} rounded-full`}/>
           <div className={`w-2 h-2 ${dotColour} rounded-full`}/>

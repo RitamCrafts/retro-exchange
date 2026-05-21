@@ -31,9 +31,9 @@ function App() {
   return (
       <>
         <div className="h-screen w-full bg-linear-to-br from-amber-50 via-rose-50 to-teal-50 flex flex-col gap-y-6 items-center justify-center p-4 relative overflow-hidden">
-          <div class="inline-flex items-center gap-2 bg-linear-to-r from-orange-500 to-rose-500 text-white px-6 py-2 shadow-lg border-4 border-slate-800 z-100">
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-coins w-6 h-6" data-fg-d3bl10="0.8:46.6:/src/app/App.tsx:86:13:4455:47:e:Coins::::::Pvs" data-fgid-d3bl10=":r8:"><circle cx="8" cy="8" r="6"></circle><path d="M18.09 10.37A6 6 0 1 1 10.34 18"></path><path d="M7 6h1v4"></path><path d="m16.71 13.88.7.71-2.82 2.82"></path></svg>
-            <span class="text-xl sm:text-2xl font-black tracking-tight" data-fg-d3bl11="0.8:46.6:/src/app/App.tsx:87:13:4515:85:e:span:t" data-fgid-d3bl11=":r9:">RETRO EXCHANGE</span>
+          <div className="inline-flex items-center gap-2 bg-linear-to-r from-orange-500 to-rose-500 text-white px-6 py-2 shadow-lg border-4 border-slate-800 z-100">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-coins w-6 h-6" data-fg-d3bl10="0.8:46.6:/src/app/App.tsx:86:13:4455:47:e:Coins::::::Pvs" data-fgid-d3bl10=":r8:"><circle cx="8" cy="8" r="6"></circle><path d="M18.09 10.37A6 6 0 1 1 10.34 18"></path><path d="M7 6h1v4"></path><path d="m16.71 13.88.7.71-2.82 2.82"></path></svg>
+            <span className="text-xl sm:text-2xl font-black tracking-tight">RETRO EXCHANGE</span>
           </div>
           <div className='flex flex-col items-stretch z-100'>
             <div className="main-container w-full max-w-5xl">

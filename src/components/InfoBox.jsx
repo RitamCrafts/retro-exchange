@@ -30,7 +30,7 @@ function InfoBox({ from, to }) {
                     {data[to]?.toFixed(4)} {to.toUpperCase()}
                 </div>
             </div>
-            <div class="text-center mt-2 text-amber-200 text-xs font-bold tracking-wide"> ★ LIVE EXCHANGE RATE ★</div>
+            <div className="text-center mt-2 text-amber-200 text-xs font-bold tracking-wide"> ★ LIVE EXCHANGE RATE ★</div>
         </div>
     )
 }
