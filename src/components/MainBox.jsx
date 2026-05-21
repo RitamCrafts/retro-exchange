@@ -1,5 +1,6 @@
 import React from 'react'
 import { useId } from 'react';
+import { fullCurrency } from '../currencyData';
 
 function MainBox({className,fromTrue,
   amount,
@@ -30,7 +31,12 @@ function MainBox({className,fromTrue,
             {
               currencyOptions.map((currency)=>(
                 <option value={currency} key={currency}>
-                  {currency.toUpperCase()}
+                  {
+                    (
+                      currency +
+                      (fullCurrency[currency] ? " - " + fullCurrency[currency] : "")
+                    ).toUpperCase()
+                  }
                 </option>
               ))
             }
