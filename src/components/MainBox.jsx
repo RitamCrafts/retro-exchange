@@ -11,7 +11,14 @@ function MainBox({className,fromTrue,
   amountDisable=false,
   currencyDisable=false
   }) {
-
+  const optionMap = () => {
+    
+    return currencyOptions.map((currency) => (
+        <option value={currency} key={currency}>
+          {(currency + (fullCurrency[currency] ? " - " + fullCurrency[currency] : "")).toUpperCase()}
+        </option>
+      ));
+  };
   const amountinputId=useId();  
   const dotColour=fromTrue?"bg-teal-500":"bg-orange-500";
   return (
@@ -28,19 +35,7 @@ function MainBox({className,fromTrue,
           onChange={(e)=>onCurrencyChange && onCurrencyChange(e.target.value)}
           disabled={currencyDisable}
         >
-            {
-              currencyOptions.map((currency)=>(
-                <option value={currency} key={currency}>
-                  {
-                    (
-                      currency +
-                      (fullCurrency[currency] ? " - " + fullCurrency[currency] : "")
-                    ).toUpperCase()
-                  }
-                </option>
-              ))
-            }
-            
+            {optionMap()}     
         </select>
         <input 
           id={amountinputId}

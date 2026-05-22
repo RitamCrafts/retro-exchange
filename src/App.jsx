@@ -10,7 +10,8 @@ function App() {
   const [from, setFrom]=useState("usd");
   const [to, setTo]=useState("inr");
   const [convertedAmount,setConvertedAmount]=useState(0);
-  const currencyInfo=useCurrencyinfo(from);
+  const [refreshTrigger,setRefreshTrigger]=useState(false);
+  const currencyInfo=useCurrencyinfo(from,refreshTrigger);
   
   const options=Object.keys(currencyInfo);
 
@@ -26,6 +27,10 @@ function App() {
     setTo(from);
     setConvertedAmount(amount);
     setAmount(convertedAmount);
+  }
+
+  const refresh=()=>{
+    setRefreshTrigger((prev)=>(!prev))
   }
 
   return (
@@ -65,7 +70,7 @@ function App() {
               </div>
             </div>
 
-            <InfoBox from={from} to={to}/>
+            <InfoBox from={from} to={to} refresh={refresh} data={currencyInfo}/>
           </div>
 
 

@@ -1,9 +1,6 @@
 import React from 'react'
-import useCurrencyinfo from '../hooks/useCurrencyInfo'
-import { useEffect } from 'react';
 
-function InfoBox({ from, to }) {
-    const data = useCurrencyinfo(from);
+function InfoBox({ from, to, refresh, data}) {
 
     return (
         <div className='mt-6 bg-slate-800 text-white font-bold border-4 border-slate-800 shadow-[6px_6px_0px_0px_rgba(251,146,60,1)] p-4'>
@@ -29,6 +26,25 @@ function InfoBox({ from, to }) {
                     1 {from.toUpperCase()} = {" "}
                     {data[to]?.toFixed(4)} {to.toUpperCase()}
                 </div>
+
+                <span
+                onClick={refresh}
+                className="
+                    cursor-pointer
+                    flex items-center justify-center
+                    w-6 h-6
+                    text-cyan-300 text-xl
+                    hover:rotate-75
+                    active:rotate-75
+                    transition-transform duration-150
+                    active:scale-90
+                    active:text-red-400
+                    select-none
+                "
+                >
+                &#10227;
+                </span>
+
             </div>
             <div className="text-center mt-2 text-amber-200 text-xs font-bold tracking-wide"> ★ LIVE EXCHANGE RATE ★</div>
         </div>

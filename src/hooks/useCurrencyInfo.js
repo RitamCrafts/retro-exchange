@@ -1,6 +1,6 @@
 import { useEffect,useState } from "react";
 
-function useCurrencyinfo(currency){
+function useCurrencyinfo(currency,refreshTrigger=false){
     const [data,setData]=useState({});
     useEffect(()=>{
         let url = `https://cdn.jsdelivr.net/npm/@fawazahmed0/currency-api@latest/v1/currencies/${currency}.json`
@@ -11,7 +11,7 @@ function useCurrencyinfo(currency){
             console.log(`API Error: ${error}`);
             setData(-1);
         });
-        },[currency]);
+        },[currency,refreshTrigger]);
     
     return data;
 }
