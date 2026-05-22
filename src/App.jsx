@@ -6,20 +6,23 @@ import InfoBox from './components/InfoBox'
  
 
 function App() {
-  const [amount, setAmount] = useState(5);
+  const [amount, setAmount] = useState("5");
   const [from, setFrom]=useState("usd");
   const [to, setTo]=useState("inr");
   const [convertedAmount,setConvertedAmount]=useState(0);
   const [refreshTrigger,setRefreshTrigger]=useState(false);
   const currencyInfo=useCurrencyinfo(from,refreshTrigger);
+  if(currencyInfo===-1){
+    alert(":( Failed to fetch currency data.");
+  }
   
-  const options=Object.keys(currencyInfo);
+  const options=Object.keys(currencyInfo || ["inr","usd"]);
 
 
   const fromBoxClass="bg-linear-to-br from-teal-100 to-teal-50";
   const toBoxClass="bg-linear-to-br from-orange-100 to-rose-50";
   useEffect(() => {
-    setConvertedAmount((amount * currencyInfo[to]).toFixed(2))
+    setConvertedAmount((Number(amount) * currencyInfo[to]).toFixed(2))
   }, [amount, currencyInfo, to])
 
   const swap=()=>{
