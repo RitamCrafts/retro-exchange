@@ -13,7 +13,7 @@ function App() {
   const [refreshTrigger,setRefreshTrigger]=useState(false);
   const currencyInfo=useCurrencyinfo(from,refreshTrigger);
   if(currencyInfo===-1){
-    alert(":( Failed to fetch currency data.");
+    alert(":( Failed to fetch currency data. Try reloading the page.");
   }
   
   const options=Object.keys(currencyInfo || ["inr","usd"]);
@@ -26,10 +26,9 @@ function App() {
   }, [amount, currencyInfo, to])
 
   const swap=()=>{
+    setAmount(convertedAmount);
     setFrom(to);
     setTo(from);
-    setConvertedAmount(amount);
-    setAmount(convertedAmount);
   }
 
   const refresh=()=>{
